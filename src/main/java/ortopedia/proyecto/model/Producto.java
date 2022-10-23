@@ -1,4 +1,4 @@
-package proyecto.model;
+package ortopedia.proyecto.model;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;

@@ -1,4 +1,4 @@
-package proyecto;
+package ortopedia.proyecto;
 
 
 import org.springframework.boot.SpringApplication;

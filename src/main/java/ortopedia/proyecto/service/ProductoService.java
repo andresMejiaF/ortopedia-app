@@ -1,4 +1,4 @@
-package proyecto.service;
+package ortopedia.proyecto.service;
 
 import ortopedia.proyecto.model.Producto;
 

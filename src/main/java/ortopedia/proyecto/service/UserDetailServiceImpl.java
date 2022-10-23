@@ -1,4 +1,4 @@
-package proyecto.service;
+package ortopedia.proyecto.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.User;
@@ -15,14 +15,18 @@ import java.util.Optional;
 @Service
 public class UserDetailServiceImpl implements UserDetailsService {
 
-    @Autowired
-    private IUsuarioService usuarioService;
+    private final IUsuarioService usuarioService;
 
-    @Autowired
-    private BCryptPasswordEncoder bCryptPasswordEncoder;
 
-    @Autowired
+
+    final
     HttpSession session;
+
+    public UserDetailServiceImpl(IUsuarioService usuarioService,  HttpSession session) {
+        this.usuarioService = usuarioService;
+
+        this.session = session;
+    }
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
