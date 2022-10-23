@@ -100,7 +100,7 @@
                         <manifest>
                             <addClasspath>true</addClasspath>
                             <classpathPrefix>lib/</classpathPrefix>
-                            <mainClass>ortopedia.ortopedia.proyecto.Application</mainClass>
+                            <mainClass>ortopedia.proyecto.Application</mainClass>
                         </manifest>
                     </archive>
                 </configuration>
