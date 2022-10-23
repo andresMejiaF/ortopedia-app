@@ -26,7 +26,7 @@
 
                         <div class="dropdown-menu"
                              aria-labelledby="navbarDropdownMenuLink">
-                            <a class="dropdown-item" th:href="@{/templates/productos}">Productos</a>
+                            <a class="dropdown-item" th:href="@{/productos}">Productos</a>
                             <a class="dropdown-item" th:href="@{/administrador/usuarios}">Usuarios</a>
                             <a class="dropdown-item" th:href="@{/administrador/ordenes}">Ordenes</a>
                             <a class="dropdown-item" th:href="@{/usuario/cerrar}">Salir</a>
@@ -45,7 +45,7 @@
             <div class="row my-4">
                 <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
                     <div class="rounded-circle bg-white shadow-1-strong d-flex align-items-center justify-content-center mb-4 mx-auto" style="width: 150px; height: 150px;">
-                        <img src="../../../../images/logo.png" height="120" alt=""
+                        <img th:src="@{/img/logo.png}" height="120" alt=""
                              loading="lazy" />
                     </div>
 
