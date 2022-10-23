@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th= "http://www.thymeleaf.org">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Ortopedia online</title>
+
+
+  <!-- Bootstrap core CSS -->
+  <link th:href="@{vendor/bootstrap/css/bootstrap.min.css}" rel="stylesheet">
+
+  <!-- Custom styles for this template -->
+  <link th:href="@{css/heroic-features.css}" rel="stylesheet">
+
+</head>
+
+<body>
+
+  <!-- Navigation -->
+  <div th:fragment="header">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
+      <div class="container">
+        <a class="navbar-brand" th:href="@{/}">Ortopédia online</a>
+
+        <form class="form-inline my-2 my-lg-0" method="post"
+              th:action="@{/search}">
+          <input class="form-control mr-sm-2" type="search"
+                 placeholder="Buscar" aria-label="Search" name="nombre"
+                 autocomplete="off">
+          <button class="btn btn-outline-light my-2 my-sm-0" type="submit">Buscar</button>
+        </form>
+
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item"><a class="nav-link"
+                                    th:href="@{/usuario/login}">Carrito</a></li>
+            <li class="nav-item"><a class="nav-link"
+                                    th:href="@{/usuario/login}">Login</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+  </div>
+
+  <!-- Navigation -->
+  <div th:fragment="header-user">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
+      <div class="container">
+        <a class="navbar-brand" th:href="@{/}">Ortopedia online</a>
+
+        <form class="form-inline my-2 my-lg-0" method="post"
+              th:action="@{/search}">
+          <input class="form-control mr-sm-2" type="search"
+                 placeholder="Buscar" aria-label="Search" name="nombre"
+                 autocomplete="off">
+          <button class="btn btn-outline-light my-2 my-sm-0" type="submit">Buscar</button>
+        </form>
+
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+
+            <li class="nav-item dropdown"><a
+                    class="nav-link dropdown-toggle" href="#"
+                    id="navbarDropdownMenuLink" role="button" data-toggle="dropdown"
+                    aria-haspopup="true" aria-expanded="false"> USER </a>
+
+              <div class="dropdown-menu"
+                   aria-labelledby="navbarDropdownMenuLink">
+                <a class="dropdown-item" th:href="@{/usuario/compras}">Compras</a>
+                <a class="dropdown-item" th:href="@{/getCart}">Carrito</a>
+                <a class="dropdown-item" th:href="@{/usuario/cerrar}">Salir</a>
+              </div></li>
+
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </div>
+
+
+  <div th:fragment="footer" class="container my-4">
+    <footer class="bg-primary text-center text-lg-start text-white">
+      <div class="container p-1">
+        <div class="row my-4">
+          <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+            <div class="rounded-circle bg-white shadow-1-strong d-flex align-items-center justify-content-center mb-4 mx-auto" style="width: 150px; height: 150px;">
+              <img src="../../../../images/logo.png" height="120" alt=""
+                   loading="lazy" />
+            </div>
+
+            <p class="text-center">Soluciones médicas y ortopédicas</p>
+
+            <ul class="list-unstyled d-flex flex-row justify-content-center">
+              <li>
+                <a class="text-white px-2" target="_blank" href="https://www.facebook.com/tiendaortopedicaarmenia">
+                  <i class="fab fa-facebook-square"></i>
+                </a>
+              </li>
+            </ul>
+
+          </div>
+
+          <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+            <h5 class="text-uppercase mb-4">¿Quiénes somos?</h5>
+
+            <ul class="list-unstyled">
+              <li class="mb-2">
+                <a class="text-white"><i class="fa fa-wheelchair" aria-hidden="true"></i>Vendemos artículos médicos y ortopédicos, mentoneras, medias de compresión, fajas post-quirúrgicas, rodilleras, plantillas, tensiómetros digitales, pulsoximetros, termómetros digitales e infrarrojos.</a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+            <h5 class="text-uppercase mb-4">Dirección</h5>
+            <ul class="list-unstyled">
+              <li class="mb-2">
+                <a class="text-white"><i class="fas fa-map-marker-alt pe-2"></i> Cra.13 # 0 Norte - 43 Local 1 y 2</a>
+              </li>
+              <li class="mb-2">
+                <a class="text-white">Armenia, Quindío</a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+            <h5 class="text-uppercase mb-4">Contacto</h5>
+            <ul class="list-unstyled">
+              <li>
+                <p><i class="fas fa-phone pe-2"></i> +57 320 578 1057</p>
+              </li>
+              <li>
+                <p><i class="fas fa-envelope pe-2 mb-0"></i> soluciones.medicas.ortopedicas@gmail.com</p>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+
+  <!-- Bootstrap core JavaScript -->
+  <script th:src="@{vendor/jquery/jquery.min.js}"></script>
+  <script th:src="@{vendor/bootstrap/js/bootstrap.bundle.min.js}"></script>
+
+  </body>
+
+  </html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th= "http://www.thymeleaf.org">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Spring eCommerce</title>
+
+  <!-- Bootstrap core CSS -->
+  <link th:href="@{/vendor/bootstrap/css/bootstrap.min.css}" rel="stylesheet">
+
+  <!-- Custom styles for this template -->
+  <link th:href="@{/css/heroic-features.css}" rel="stylesheet">
+
+</head>
+
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
+    <div class="container">
+      <a class="navbar-brand" th:href="@{/}">Soluciones medicas y Ortopedicas</a>
+
+
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" th:href="@{/usuario/login}">Login</a>
+          </li>
+        </ul>
+      </div>    
+    </div>
+  </nav>
+
+
+
+
+
+
+
+
+
+
+  <div class="container bg-light rounded justify-content-center">
+    <section class="vh-80">
+      <div class="container py-5 h-100">
+        <div class="row d-flex align-items-center justify-content-center h-100">
+          <div class="col-md-8 col-lg-7 col-xl-6">
+            <img src="../../../../../images/b.jpg"
+                 class="img-fluid" alt="Phone image">
+          </div>
+          <div class="col-md-7 col-lg-5 col-xl-5 offset-xl-1">
+            <form  th:action="@{/usuario/login}" method="post">
+              <h1 style="font-family: cursive;">Inicio de sesión</h1>
+              <!-- Email input -->
+              <div class="form-outline mb-4">
+                <input type="email" class="form-control" id="username" name="username" required autocomplete="off">
+                <label class="form-label">Correo</label>
+              </div>
+
+              <!-- Password input -->
+              <div class="form-outline mb-4">
+                <input type="password"  class="form-control" id="password" name="password" placeholder="Ingrese su contraseña" required>
+                <label for="pwd" class="form-label" >Contraseña</label>
+              </div>
+
+              <!-- Submit button -->
+              <button type="submit" class="btn btn-primary btn-lg btn-block" (click)="login(user.value, pass.value)">Iniciar sesión</button>
+            </form>
+            <a th:href="@{/usuario/registro}" class="card-link">¿No tienes una cuenta? Registrate aqui</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+  <!-- Footer -->
+  <!-- /.container -->
+
+  <div th:include="template_usuario.html::footer">
+  </div>
+
+  <!-- Bootstrap core JavaScript -->
+  <script th:src="@{/vendor/jquery/jquery.min.js}"></script>
+  <script th:src="@{/vendor/bootstrap/js/bootstrap.bundle.min.js}"></script>
+
+</body>
+
+</html>
