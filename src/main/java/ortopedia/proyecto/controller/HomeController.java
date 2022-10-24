@@ -41,8 +41,6 @@ public class HomeController {
 
     List<DetalleOrden> detalles= new ArrayList<DetalleOrden>();
 
-    BCryptPasswordEncoder passEncode = new BCryptPasswordEncoder();
-
 
     Orden orden = new Orden();
 
@@ -54,17 +52,7 @@ public class HomeController {
         model.addAttribute("productos", productoService.findAll());
 
         //
-        Usuario usuario = new Usuario();
-        usuario.setNombre("Olga P Venegas");
-        usuario.setTipo("ADMIN");
-        usuario.setPassword("am5589uq");
-        usuario.setUsername("solucionesmedicas");
-        usuario.setEmail("solucionesmedicasortopedicas@gmail.com");
-        usuario.setTelefono("316 258 5270");
-        usuario.setDireccion("Cra.13 #0 Norte - 43 local 1 y 2 Armenia, Quindio");
-        usuario.setPassword(passEncode.encode(usuario.getPassword()));
 
-        usuarioService.save(usuario);
 
         model.addAttribute("sesion", session.getAttribute("idusuario"));
         return "usuario/home_usuario";
