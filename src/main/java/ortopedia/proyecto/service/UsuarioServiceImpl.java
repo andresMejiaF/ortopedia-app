@@ -32,6 +32,7 @@ public class UsuarioServiceImpl implements IUsuarioService {
 
     @Override
     public Optional<Usuario> finByEmail(String email) {
+
         return usuarioRepository.findByEmail(email);
 
     }

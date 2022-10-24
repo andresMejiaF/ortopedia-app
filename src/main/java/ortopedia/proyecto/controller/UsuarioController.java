@@ -55,7 +55,7 @@ public class UsuarioController {
     }
 
     @GetMapping("/acceder")
-    public String acceder(Usuario usuario, HttpSession session){
+    public String acceder(Usuario usuario, HttpSession session) throws Exception {
 
 
 
@@ -71,10 +71,10 @@ public class UsuarioController {
 
             }
         }else{
-            System.out.println("Usuario no existe");
+            throw new Exception("los datos ingresados no se encuentran en base de datos");
         }
 
-        return "redirect:/";
+      //  return "redirect:/";
     }
 
     @GetMapping("/compras")
