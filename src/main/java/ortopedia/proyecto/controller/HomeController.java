@@ -69,7 +69,7 @@ public class HomeController {
         model.addAttribute("producto", producto);
 
         System.out.println("Id producto enviado como parametro: "+ id);
-        return "usuario/productoHome";
+        return "usuario/productohome";
     }
 
     @GetMapping("/productohomeadm/{id}")
@@ -83,7 +83,7 @@ public class HomeController {
         model.addAttribute("producto", producto);
 
         System.out.println("Id producto enviado como parametro: "+ id);
-        return "administrador/productoHomeadmin";
+        return "administrador/productohomeadmin";
     }
 
     @PostMapping("/cart")
