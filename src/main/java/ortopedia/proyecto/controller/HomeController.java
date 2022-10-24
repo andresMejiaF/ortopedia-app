@@ -58,7 +58,7 @@ public class HomeController {
         return "usuario/home_usuario";
     }
 
-    @GetMapping("productohome/{id}")
+    @GetMapping("/productohome/{id}")
     public String productoHome(@PathVariable Integer id, Model model){
 
         Producto producto = new Producto();
@@ -72,7 +72,7 @@ public class HomeController {
         return "usuario/productoHome";
     }
 
-    @GetMapping("productohomeadm/{id}")
+    @GetMapping("/productohomeadm/{id}")
     public String productoHomeAdm(@PathVariable Integer id, Model model){
 
         Producto producto = new Producto();
