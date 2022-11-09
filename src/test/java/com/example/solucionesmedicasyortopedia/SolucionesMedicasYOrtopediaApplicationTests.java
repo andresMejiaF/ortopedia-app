@@ -20,17 +20,17 @@ import java.time.LocalDate;
 @SpringBootTest(classes = Application.class)
 class SolucionesMedicasYOrtopediaApplicationTests {
 
-    @Autowired
-    private IUsuarioService usuarioService;
+@Autowired
+private IUsuarioService usuarioService;
 
-    @Autowired
-    private ProductoService productoService;
+@Autowired
+private ProductoService productoService;
 
-    @Autowired
-    private OrdenService ordenService;
+@Autowired
+private OrdenService ordenService;
 
-    @Autowired
-    private DetalleOrdenService detalleOrdenService;
+@Autowired
+private DetalleOrdenService detalleOrdenService;
 
     @Test
     public void registrarUsuarioTest(){
@@ -82,8 +82,9 @@ class SolucionesMedicasYOrtopediaApplicationTests {
 
     @Test
     public void crearDetalleOrdenTest(){
+
         Usuario usuario = new Usuario(1, "Julian", "xXJulian100Xx", "julian100@gmail.com", "Urbanizacion El Poblado Mz 5 Casa 20", "7435625", "ADMIN", "Julian100Xx");
-        Producto producto = new Producto(9, usuario, "Crema Natural", "Crema natural para el cuidado de la piel con olor a vainilla", "/ruta/imagen-1", 15.000, 10);
+        Producto producto = new Producto(1, usuario, "Crema Natural", "Crema natural para el cuidado de la piel con olor a vainilla", "/ruta/imagen-1", 15.000, 10);
         Orden orden = new Orden(1, "1", Date.valueOf(LocalDate.now()), Date.valueOf(LocalDate.now()), usuario, 30.000);
 
         DetalleOrden detalleOrden = new DetalleOrden(1, "Orden#1", 2, 15.000, 30.000, orden, producto);
@@ -94,5 +95,6 @@ class SolucionesMedicasYOrtopediaApplicationTests {
 
     }
 
-}
 
+
+}
