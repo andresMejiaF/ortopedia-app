@@ -43,14 +43,24 @@ public class HomeController {
 
     Orden orden = new Orden();
 
-  //  BCryptPasswordEncoder passEncode = new BCryptPasswordEncoder();
+   BCryptPasswordEncoder passEncode = new BCryptPasswordEncoder();
 
     @GetMapping("")
     public String home(Model model, HttpSession session){
 
-        System.out.println("SESION DE " + session.getAttribute("idusuario"));
 
         model.addAttribute("productos", productoService.findAll());
+        Usuario usuario = new Usuario();
+        usuario.setNombre("Olga P Venegas");
+        usuario.setTipo("ADMIN");
+        usuario.setPassword("am5589uq");
+        usuario.setUsername("solucionesmedicas");
+        usuario.setEmail("solucionesmedicasortopedicas@gmail.com");
+        usuario.setTelefono("316 258 5270");
+        usuario.setDireccion("Cra.13 #0 Norte - 43 local 1 y 2 Armenia, Quindio");
+        usuario.setPassword(passEncode.encode(usuario.getPassword()));
+
+        usuarioService.save(usuario);
 
 
 
@@ -203,8 +213,7 @@ public class HomeController {
 
     @PostMapping("/search")
     public String searchProduct(@RequestParam String nombre, Model model, HttpSession session){
-        System.out.println("SESION BUSQUEDA DE " + session.getAttribute("idusuario"));
-        System.out.println("nombre del producto: " + nombre);
+
       //pendiente a mejorar
         List<Producto> productos = productoService.findAll().stream().filter( p -> p.getNombre().contains(nombre)).collect(Collectors.toList());
         model.addAttribute("productos", productos);
@@ -215,7 +224,6 @@ public class HomeController {
 
     @PostMapping("/searchadmin")
     public String searchProductAdmin(@RequestParam String nombre, Model model){
-        System.out.println("nombre del valido: " + nombre);
         //pendiente a mejorar
         List<Producto> productos = productoService.findAll().stream().filter( p -> p.getNombre().contains(nombre)).collect(Collectors.toList());
         model.addAttribute("productos", productos);

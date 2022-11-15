@@ -54,7 +54,6 @@ public class AdministradorController {
 
     @GetMapping("/detalle/{id}")
     public String detalle(@PathVariable Integer id, Model model ){
-        System.out.println("ID de ña orden: " + id);
 
         Orden orden= ordenService.finById(id).get();
 

@@ -41,7 +41,6 @@ public class UsuarioController {
     @PostMapping("/save")
     public String save(Usuario usuario){
 
-        System.out.println(usuario.getNombre() + " " + usuario.getEmail());
         usuario.setTipo("USER");
         usuario.setPassword(passEncode.encode(usuario.getPassword()));
         usuarioService.save(usuario);
