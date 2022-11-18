@@ -41,4 +41,11 @@ public class ProductoServiceImpl implements ProductoService{
     public List<Producto> findAll() {
         return productoRepository.findAll();
     }
+
+    @Override
+    public List<Producto> buscarProducto(String cadena) {
+        return productoRepository.buscarProductos(cadena);
+    }
+
+
 }

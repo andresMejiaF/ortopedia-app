@@ -38,12 +38,13 @@
     <br>
     <div class="container">
         <div class="d-flex justify-content-between p-3">
-    <!-- Page Features -->
-    <div class="row text-center">
-        <div class="col-lg-3 col-md-6 mb-4"  th:each="producto: ${productos}">
-            <div class="card h-100">
-                <img class="card-img-top image" th:src="@{/images/{img} (img=${producto.imagen})}" alt="">
-                <div class="card-body">
+            
+            <!-- Page Features -->
+    <div class="row text-center" >
+        <div class="col-lg-3 col-md-6 mb-4 "  th:each="producto: ${productos}"  >
+            <div class="card h-100 " >
+                <img class="card-img-top image" th:src="@{/images/{img} (img=${producto.imagen})}" alt="" >
+                <div class="card-body " >
                     <p class="card-text" th:text="${producto.nombre}"></p>
                     <p class="card-text" th:text="'$ '+${producto.precio}"></p>
                 </div>
@@ -51,6 +52,7 @@
                     <a th:href="@{/productohomeadm/{id} (id=${producto.id})}" class="btn btn-primary">Ver producto</a>
                 </div>
             </div>
+
         </div>
     </div>
         </div>

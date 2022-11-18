@@ -13,4 +13,6 @@ public interface ProductoService {
     public void delete(Integer id);
 
     public List<Producto> findAll();
+
+    public List<Producto> buscarProducto(String cadena);
 }

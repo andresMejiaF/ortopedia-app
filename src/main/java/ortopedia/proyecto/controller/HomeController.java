@@ -9,10 +9,7 @@ import ortopedia.proyecto.model.DetalleOrden;
 import ortopedia.proyecto.model.Orden;
 import ortopedia.proyecto.model.Producto;
 import ortopedia.proyecto.model.Usuario;
-import ortopedia.proyecto.service.DetalleOrdenService;
-import ortopedia.proyecto.service.IUsuarioService;
-import ortopedia.proyecto.service.OrdenService;
-import ortopedia.proyecto.service.ProductoService;
+import ortopedia.proyecto.service.*;
 
 import javax.servlet.http.HttpSession;
 import java.util.ArrayList;
@@ -38,6 +35,9 @@ public class HomeController {
     @Autowired
     private DetalleOrdenService detalleOrdenService;
 
+
+    @Autowired
+    private MailService mailService;
 
     List<DetalleOrden> detalles= new ArrayList<DetalleOrden>();
 
@@ -193,17 +193,29 @@ public class HomeController {
             detalleOrdenService.save(dt);
         }
         //Limpiando los valores
+
+        String subject = "Detalle de la compra";
+        String message = "Un saludo por parte de Soluciones medicas y Ortopedicas!" + "\n" + "Su compra se a realizado con exito, puede verificarla en la seccion de mis compras en nuestra pagina: "
+                +   "\n" + "todo con un total a pagar de: " + orden.getTotal();
+
+      mailService.sendMail("solucionesmedicasyortopedicas@gmail.com", usuario.getEmail(),subject,message);
+
         orden = new Orden();
         detalles.clear();
 
-        return "redirect:/";
+
+
+
+        return "redirect:/usuario/compras";
+       // return "usuario/compras";
     }
 
     @PostMapping("/search")
     public String searchProduct(@RequestParam String nombre, Model model, HttpSession session){
 
       //pendiente a mejorar
-        List<Producto> productos = productoService.findAll().stream().filter( p -> p.getNombre().contains(nombre)).collect(Collectors.toList());
+       // List<Producto> productos = productoService.findAll().stream().filter( p -> p.getNombre().contains(nombre)).collect(Collectors.toList());
+        List<Producto> productos = productoService.buscarProducto(nombre);
         model.addAttribute("productos", productos);
         model.addAttribute("sesion", session.getAttribute("idusuario"));
         return "usuario/home_usuario";
@@ -213,7 +225,8 @@ public class HomeController {
     @PostMapping("/searchadmin")
     public String searchProductAdmin(@RequestParam String nombre, Model model){
         //pendiente a mejorar
-        List<Producto> productos = productoService.findAll().stream().filter( p -> p.getNombre().contains(nombre)).collect(Collectors.toList());
+      //  List<Producto> productos = productoService.findAll().stream().filter( p -> p.getNombre().contains(nombre)).collect(Collectors.toList());
+        List<Producto> productos = productoService.buscarProducto(nombre);
         model.addAttribute("productos", productos);
         return "administrador/home";
     }
