@@ -45,14 +45,17 @@ public class UsuarioController {
         usuario.setTipo("USER");
         usuario.setPassword(passEncode.encode(usuario.getPassword()));
 
-        try {
+        //try {
             usuarioService.save(usuario);
+            /*
         } catch (Exception e) {
             redirectAttrs
-                    .addFlashAttribute("mensaje", "El correo ya existe en el sistema ")
+                    .addFlashAttribute("mensaje", "el correo ya existe en el sistema ")
                     .addFlashAttribute("clase", "success");
-          //  return "redirect:/usuario/registro";
+            return "redirect:/usuario/registro";
         }
+        */
+
         return "redirect:/";
     }
 

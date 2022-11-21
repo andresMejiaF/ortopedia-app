@@ -21,6 +21,7 @@ public class UsuarioServiceImpl implements IUsuarioService {
     }
 
 
+    /*
     @Override
     public Usuario save(Usuario usuario) throws Exception{
 
@@ -34,8 +35,8 @@ public class UsuarioServiceImpl implements IUsuarioService {
 
 
     }
+*/
 
-    /*
     @Override
     public Usuario save(Usuario usuario) {
 
@@ -44,7 +45,7 @@ public class UsuarioServiceImpl implements IUsuarioService {
         return usuarioRepository.save(usuario);
 
     }
-*/
+
 
     /*
     @Override
