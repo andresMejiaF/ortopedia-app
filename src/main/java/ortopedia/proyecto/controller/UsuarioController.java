@@ -45,8 +45,8 @@ public class UsuarioController {
         usuario.setTipo("USER");
         usuario.setPassword(passEncode.encode(usuario.getPassword()));
 
-        Optional<Usuario>  buscado = usuarioService.finByEmail(usuario.getEmail());
-        if(buscado!=null){
+        //Optional<Usuario>  buscado = usuarioService.finByEmail(usuario.getEmail());
+        if(usuarioService.finByEmail(usuario.getEmail()).isPresent()){
             redirectAttrs
                     .addFlashAttribute("mensaje", "el correo ya existe en el sistema ")
                     .addFlashAttribute("clase", "success");
