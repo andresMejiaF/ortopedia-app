@@ -11,6 +11,7 @@ public interface IUsuarioService {
 
    Usuario save(Usuario usuario);
 
+
    // boolean save(Usuario usuario);
     List<Usuario> findAll();
     Optional<Usuario> finByEmail(String email);
