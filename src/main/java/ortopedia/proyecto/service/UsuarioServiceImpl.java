@@ -36,7 +36,7 @@ public class UsuarioServiceImpl implements IUsuarioService {
 
     }
 */
-/*
+
     @Override
     public Usuario save(Usuario usuario) {
 
@@ -45,9 +45,9 @@ public class UsuarioServiceImpl implements IUsuarioService {
         return usuarioRepository.save(usuario);
 
     }
-*/
 
 
+/*
     @Override
     public boolean save(Usuario usuario) {
 
@@ -61,7 +61,7 @@ public class UsuarioServiceImpl implements IUsuarioService {
              return true;
         //}
     }
-
+*/
 
 
     @Override
