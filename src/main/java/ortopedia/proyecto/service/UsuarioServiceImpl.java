@@ -20,6 +20,7 @@ public class UsuarioServiceImpl implements IUsuarioService {
         return usuarioRepository.findById(id);
     }
 
+    /*
     @Override
     public Usuario save(Usuario usuario) throws Exception{
 
@@ -30,6 +31,16 @@ public class UsuarioServiceImpl implements IUsuarioService {
         }else{
             return usuarioRepository.save(usuario);
         }
+
+
+    }
+*/
+    @Override
+    public Usuario save(Usuario usuario) {
+
+        Optional<Usuario>  buscado = finByEmail(usuario.getEmail());
+
+            return usuarioRepository.save(usuario);
 
     }
 
