@@ -47,8 +47,10 @@ public class UsuarioController {
 
         Optional<Usuario>  buscado = usuarioService.finByEmail(usuario.getEmail());
         if(buscado.isPresent()){
-
-            return "redirect:/usuario/registro";
+            redirectAttrs
+                    .addFlashAttribute("mensaje", "el correo ya existe en el sistema ")
+                    .addFlashAttribute("clase", "success");
+            return "redirect:usuario/registro";
         }else{
             usuarioService.save(usuario);
         }
