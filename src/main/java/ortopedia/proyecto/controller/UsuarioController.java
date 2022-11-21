@@ -49,14 +49,16 @@ public class UsuarioController {
             usuarioService.save(usuario);
         } catch (Exception e) {
 
+
+
+        }
+        */
+        if(usuarioService.save(usuario)==false){
             redirectAttrs
                     .addFlashAttribute("mensaje", "El correo ya existe en el sistema ")
                     .addFlashAttribute("clase", "success");
             return "redirect:/usuario/registro";
-
         }
-        */
-        usuarioService.save(usuario);
 
         return "redirect:/";
     }

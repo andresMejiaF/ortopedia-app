@@ -35,13 +35,29 @@ public class UsuarioServiceImpl implements IUsuarioService {
 
     }
 */
+    /*
     @Override
     public Usuario save(Usuario usuario) {
 
         Optional<Usuario>  buscado = finByEmail(usuario.getEmail());
 
-            return usuarioRepository.save(usuario);
+        return usuarioRepository.save(usuario);
 
+    }
+*/
+
+    @Override
+    public Boolean save(Usuario usuario) {
+
+        Optional<Usuario>  buscado = finByEmail(usuario.getEmail());
+        if(buscado.isPresent()){
+            System.out.println("El Correo del usuario ya existe");
+            return false;
+
+        }else{
+             usuarioRepository.save(usuario);
+             return true;
+        }
     }
 
     @Override
