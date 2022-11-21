@@ -52,14 +52,14 @@ public class UsuarioServiceImpl implements IUsuarioService {
     public boolean save(Usuario usuario) {
 
         Optional<Usuario>  buscado = finByEmail(usuario.getEmail());
-        if(buscado.isPresent()){
+      //  if(buscado.isPresent()){
             System.out.println("El Correo del usuario ya existe");
-            return false;
+        //    return false;
 
-        }else{
+        //}else{
              usuarioRepository.save(usuario);
              return true;
-        }
+        //}
     }
 
 
