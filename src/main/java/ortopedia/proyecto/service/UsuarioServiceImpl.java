@@ -46,6 +46,11 @@ public class UsuarioServiceImpl implements IUsuarioService {
 
     }
 
+    @Override
+    public Usuario usuarioEmail(String email) {
+        return usuarioRepository.obtenerEmail(email);
+    }
+
 
 
 
