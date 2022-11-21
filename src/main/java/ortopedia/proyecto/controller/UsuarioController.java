@@ -49,7 +49,7 @@ public class UsuarioController {
             usuarioService.save(usuario);
         } catch (Exception e) {
 
-            return "redirect:/usuario/registro";
+            return "redirect:/usuario/registro/";
 
         }
         return "redirect:/";
