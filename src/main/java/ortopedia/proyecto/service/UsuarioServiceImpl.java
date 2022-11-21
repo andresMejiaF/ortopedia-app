@@ -36,7 +36,7 @@ public class UsuarioServiceImpl implements IUsuarioService {
 
     }
 */
-
+/*
     @Override
     public Usuario save(Usuario usuario) {
 
@@ -45,11 +45,11 @@ public class UsuarioServiceImpl implements IUsuarioService {
         return usuarioRepository.save(usuario);
 
     }
+*/
 
 
-    /*
     @Override
-    public Boolean save(Usuario usuario) {
+    public boolean save(Usuario usuario) {
 
         Optional<Usuario>  buscado = finByEmail(usuario.getEmail());
         if(buscado.isPresent()){
@@ -62,7 +62,7 @@ public class UsuarioServiceImpl implements IUsuarioService {
         }
     }
 
-     */
+
 
     @Override
     public List<Usuario> findAll() {

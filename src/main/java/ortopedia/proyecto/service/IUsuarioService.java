@@ -9,9 +9,9 @@ public interface IUsuarioService {
     Optional<Usuario> findById(Integer id);
   //  Usuario save(Usuario usuario) throws Exception;
 
-    Usuario save(Usuario usuario);
+  //  Usuario save(Usuario usuario);
 
-   // Boolean  save(Usuario usuario);
+    boolean save(Usuario usuario);
     List<Usuario> findAll();
     Optional<Usuario> finByEmail(String email);
 
