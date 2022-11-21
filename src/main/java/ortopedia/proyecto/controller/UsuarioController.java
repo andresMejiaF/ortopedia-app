@@ -50,7 +50,7 @@ public class UsuarioController {
             redirectAttrs
                     .addFlashAttribute("mensaje", "el correo ya existe en el sistema ")
                     .addFlashAttribute("clase", "success");
-            return "redirect:/usuario/registro/";
+            return "redirect:/";
         }else{
             usuarioService.save(usuario);
         }

@@ -34,7 +34,14 @@
     <br>
     <br>
     <div class="container">
-      <div class="d-flex justify-content-between p-3">
+
+        <div th:class="alert-danger" th:classappend="'alert-' + (${clase != null} ? ${clase} : info)" th:if="${mensaje != null}"
+             th:text="${mensaje}"
+             class="alert">
+        </div>
+
+
+        <div class="d-flex justify-content-between p-3">
 
       <!-- Page Features -->
       <div class="row text-center">
