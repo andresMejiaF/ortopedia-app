@@ -21,8 +21,16 @@ public class UsuarioServiceImpl implements IUsuarioService {
     }
 
     @Override
-    public Usuario save(Usuario usuario) {
-        return usuarioRepository.save(usuario);
+    public Usuario save(Usuario usuario) throws Exception{
+
+        Optional<Usuario>  buscado = finByEmail(usuario.getEmail());
+        if(buscado.isPresent()){
+                throw new Exception("El Correo del usuario ya existe");
+
+        }else{
+            return usuarioRepository.save(usuario);
+        }
+
     }
 
     @Override

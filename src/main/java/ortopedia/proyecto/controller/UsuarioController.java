@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import ortopedia.proyecto.model.Orden;
 import ortopedia.proyecto.model.Usuario;
 import ortopedia.proyecto.service.IUsuarioService;
@@ -39,11 +40,18 @@ public class UsuarioController {
     }
 
     @PostMapping("/save")
-    public String save(Usuario usuario){
+    public String save(Usuario usuario, RedirectAttributes redirectAttrs){
 
         usuario.setTipo("USER");
         usuario.setPassword(passEncode.encode(usuario.getPassword()));
-        usuarioService.save(usuario);
+        try {
+            usuarioService.save(usuario);
+        } catch (Exception e) {
+            redirectAttrs
+                    .addFlashAttribute("mensaje", "El correo ya existe en el sistema ")
+                    .addFlashAttribute("clase", "success");
+            return "redirect:/usuario/registro";
+        }
         return "redirect:/";
     }
 
@@ -55,8 +63,6 @@ public class UsuarioController {
 
     @GetMapping("/acceder")
     public String acceder(Usuario usuario, HttpSession session) throws Exception {
-
-
 
         Optional<Usuario> user = usuarioService.findById(Integer.parseInt(session.getAttribute("idusuario").toString()));
      //   System.out.println(user.get().getEmail() + " CONTRASEÑA: " + user.get().getPassword());
