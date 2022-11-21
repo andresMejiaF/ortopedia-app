@@ -53,7 +53,7 @@ public class UsuarioServiceImpl implements IUsuarioService {
 
       //  Optional<Usuario>  buscado = finByEmail(usuario.getEmail());
       //  if(buscado.isPresent()){
-            System.out.println("El Correo del usuario ya existe");
+          //  System.out.println("El Correo del usuario ya existe");
         //    return false;
 
         //}else{
