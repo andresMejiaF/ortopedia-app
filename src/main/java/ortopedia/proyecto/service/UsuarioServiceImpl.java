@@ -51,7 +51,7 @@ public class UsuarioServiceImpl implements IUsuarioService {
     @Override
     public boolean save(Usuario usuario) {
 
-        Optional<Usuario>  buscado = finByEmail(usuario.getEmail());
+      //  Optional<Usuario>  buscado = finByEmail(usuario.getEmail());
       //  if(buscado.isPresent()){
             System.out.println("El Correo del usuario ya existe");
         //    return false;
