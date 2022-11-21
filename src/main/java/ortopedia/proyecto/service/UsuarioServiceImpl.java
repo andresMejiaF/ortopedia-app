@@ -20,7 +20,7 @@ public class UsuarioServiceImpl implements IUsuarioService {
         return usuarioRepository.findById(id);
     }
 
-    /*
+
     @Override
     public Usuario save(Usuario usuario) throws Exception{
 
@@ -34,7 +34,7 @@ public class UsuarioServiceImpl implements IUsuarioService {
 
 
     }
-*/
+
     /*
     @Override
     public Usuario save(Usuario usuario) {
@@ -46,6 +46,7 @@ public class UsuarioServiceImpl implements IUsuarioService {
     }
 */
 
+    /*
     @Override
     public Boolean save(Usuario usuario) {
 
@@ -59,6 +60,8 @@ public class UsuarioServiceImpl implements IUsuarioService {
              return true;
         }
     }
+
+     */
 
     @Override
     public List<Usuario> findAll() {

@@ -7,11 +7,11 @@ import java.util.Optional;
 
 public interface IUsuarioService {
     Optional<Usuario> findById(Integer id);
-  //  Usuario save(Usuario usuario) throws Exception;
+    Usuario save(Usuario usuario) throws Exception;
 
    // Usuario save(Usuario usuario);
 
-    Boolean  save(Usuario usuario);
+   // Boolean  save(Usuario usuario);
     List<Usuario> findAll();
     Optional<Usuario> finByEmail(String email);
 
